@@ -79,7 +79,7 @@ nav ul li a:hover{
     background:
     linear-gradient(rgba(0,0,0,.75),
     rgba(0,0,0,.75)),
-    url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1600&q=80');
+    url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=1600&q=80');
 
     background-size:cover;
     background-position:center;
@@ -98,6 +98,89 @@ nav ul li a:hover{
     font-size:1.2rem;
     color:#ddd;
     margin-bottom:30px;
+}
+
+/* =========================
+   HERO MEJORADO
+========================= */
+
+.hero-badge{
+    display:inline-block;
+    background:rgba(0,255,136,.15);
+    color:#00ff88;
+    padding:8px 18px;
+    border-radius:30px;
+    margin-bottom:25px;
+    font-size:.9rem;
+    border:1px solid rgba(0,255,136,.3);
+}
+
+.hero h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:0 auto 35px;
+    font-size:1.2rem;
+    color:#ddd;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.btn-whatsapp{
+    background:transparent;
+    border:2px solid #25D366;
+    color:#25D366;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-whatsapp:hover{
+    background:#25D366;
+    color:#fff;
+}
+
+.hero-info{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.hero-info div{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#ccc;
+}
+
+.hero-info i{
+    color:#00ff88;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero-info{
+        flex-direction:column;
+        gap:15px;
+    }
 }
 
 /* =========================
@@ -433,6 +516,64 @@ section h2{
     margin-bottom:40px;
     font-size:2rem;
     color:#00ff88;
+}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categorias-subtitulo{
+    max-width:700px;
+    margin:0 auto 40px;
+    text-align:center;
+    color:#ccc;
+    line-height:1.6;
+}
+
+.grupo-titulo{
+    color:#00ff88;
+    margin:50px 0 25px;
+    text-align:center;
+    font-size:1.4rem;
+}
+
+.categoria-badge{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    background:#00ff88;
+    color:#000;
+    font-size:.8rem;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.btn-card{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#00ff88;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.card-destacada{
+    position:relative;
+    border:2px solid #00ff88;
+}
+
+.mas-vendido{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#00ff88;
+    color:#000;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:.75rem;
+    font-weight:bold;
 }
 
 /* =========================

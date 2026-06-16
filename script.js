@@ -60,14 +60,48 @@ window.addEventListener("load", () => {
 });
 
 // ==============================
-// MENÚ ACTIVO AUTOMÁTICO
+// MENÚ HAMBURGUESA
+// ==============================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+function cerrarMenu() {
+    if (navMenu) navMenu.classList.remove("active");
+    if (menuToggle) menuToggle.classList.remove("active");
+}
+
+function abrirCerrarMenu() {
+    if (navMenu) navMenu.classList.toggle("active");
+    if (menuToggle) menuToggle.classList.toggle("active");
+}
+
+if (menuToggle && navMenu) {
+
+    menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        abrirCerrarMenu();
+    });
+
+    // Cierra el menú al tocar fuera de él (botón o nav)
+    document.addEventListener("click", (e) => {
+
+        const clicDentroDelMenu = navMenu.contains(e.target) || menuToggle.contains(e.target);
+
+        if (!clicDentroDelMenu) cerrarMenu();
+
+    });
+
+}
+
+// ==============================
+// MENÚ ACTIVO AUTOMÁTICO + CIERRE AL NAVEGAR
 // ==============================
 
 const enlaces = document.querySelectorAll("nav a");
+const paginaActual = window.location.pathname.split("/").pop();
 
 enlaces.forEach((enlace) => {
-
-    const paginaActual = window.location.pathname.split("/").pop();
 
     if (enlace.getAttribute("href") === paginaActual) {
 
@@ -75,6 +109,9 @@ enlaces.forEach((enlace) => {
         enlace.style.fontWeight = "bold";
 
     }
+
+    // Si el usuario toca un enlace dentro del menú móvil, lo cerramos
+    enlace.addEventListener("click", cerrarMenu);
 
 });
 

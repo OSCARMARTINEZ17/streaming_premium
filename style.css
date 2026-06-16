@@ -29,7 +29,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
+    padding:15px 5%;
     z-index:1000;
     box-shadow:0 4px 15px rgba(0,0,0,.4);
 }
@@ -38,6 +38,7 @@ header{
     font-size:1.5rem;
     font-weight:bold;
     color:#00ff88;
+    white-space:nowrap;
 }
 
 .logo a{
@@ -129,6 +130,17 @@ nav ul li a:hover{
 }
 
 /* =========================
+   MENÚ HAMBURGUESA (botón)
+========================= */
+
+.menu-toggle{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+    color:white;
+}
+
+/* =========================
    HERO PRINCIPAL
 ========================= */
 
@@ -138,7 +150,7 @@ nav ul li a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:120px 20px 50px;
+    padding:90px 20px 50px;
 
     background:
         linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
@@ -558,37 +570,141 @@ footer p{
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE TABLET
 ========================= */
 
-@media(max-width:992px){
+@media (max-width: 992px){
 
     header{
         flex-direction:column;
         gap:15px;
+        padding:15px 5%;
     }
 
     nav ul{
         justify-content:center;
+        gap:15px;
+    }
+
+    .hero{
+        padding:180px 20px 80px;
     }
 
     .hero h1{
-        font-size:2.5rem;
+        font-size:3rem;
     }
 
     .hero-secundario h1{
-        font-size:2rem;
+        font-size:2.2rem;
+    }
+
+    .beneficios-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
-@media(max-width:768px){
+/* =========================
+   RESPONSIVE CELULAR
+   (header, menú hamburguesa y submenú táctil)
+========================= */
+
+@media (max-width: 768px){
+
+    header{
+        flex-direction:row;
+        justify-content:space-between;
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:1.3rem;
+        text-align:center;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .header-whatsapp{
+        display:none;
+    }
+
+    nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#111827;
+        max-height:0;
+        overflow:hidden;
+        transition:.4s;
+    }
+
+    nav.active{
+        max-height:700px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+        gap:0;
+    }
+
+    nav ul li{
+        width:100%;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:15px 20px;
+        border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    /* Submenú siempre visible en lista: no depende de :hover,
+       que no funciona bien en pantallas táctiles */
+    .submenu{
+        position:static;
+        display:flex;
+        background:transparent;
+        box-shadow:none;
+        width:100%;
+        min-width:100%;
+        border-radius:0;
+        padding-top:10px;
+    }
+
+    .submenu a{
+        padding:8px 0;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:220px 20px 80px;
+    }
+
+    .hero-badge{
+        font-size:.8rem;
+        padding:6px 15px;
+    }
 
     .hero h1{
-        font-size:2rem;
+        font-size:2.3rem;
+        line-height:1.2;
     }
 
     .hero p{
         font-size:1rem;
+        line-height:1.6;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-buttons a{
+        width:100%;
+        max-width:300px;
     }
 
     .hero-info{
@@ -597,38 +713,82 @@ footer p{
     }
 
     section{
-        padding:70px 5%;
+        padding:60px 5%;
     }
 
     .cards{
         grid-template-columns:1fr;
     }
 
+    .card{
+        padding:20px;
+    }
+
     .stats{
         flex-direction:column;
         align-items:center;
     }
+
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .beneficios-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-secundario{
+        padding-top:180px;
+    }
+
+    .hero-secundario h1{
+        font-size:2rem;
+    }
 }
 
-@media(max-width:480px){
+/* =========================
+   RESPONSIVE CELULAR PEQUEÑO
+========================= */
+
+@media (max-width: 480px){
 
     .logo{
-        font-size:1.2rem;
+        font-size:1.1rem;
     }
 
-    nav ul{
-        gap:10px;
-    }
-
-    nav ul li a{
-        font-size:.9rem;
+    .hero{
+        padding:250px 15px 60px;
     }
 
     .hero h1{
         font-size:1.8rem;
     }
 
+    .hero p{
+        font-size:.95rem;
+    }
+
     .hero-secundario h1{
-        font-size:1.6rem;
+        font-size:1.5rem;
+    }
+
+    .hero-secundario p{
+        font-size:.9rem;
+    }
+
+    section h2{
+        font-size:1.7rem;
+    }
+
+    .beneficio{
+        padding:20px;
+    }
+
+    .whatsapp{
+        width:55px;
+        height:55px;
+        right:15px;
+        bottom:15px;
+        font-size:28px;
     }
 }

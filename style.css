@@ -40,6 +40,12 @@ header{
     color:#00ff88;
 }
 
+.logo a{
+    text-decoration: none;
+    color: white; /* o inherit */
+    font-weight: bold;
+}
+
 nav ul{
     list-style:none;
     display:flex;

@@ -105,21 +105,18 @@ if (menuToggle && navMenu) {
 // SUBMENÚ CATEGORÍAS MÓVIL
 // ==============================
 
-const dropdownLink = document.querySelector(".dropdown > a");
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const dropdown = document.querySelector(".dropdown");
 const submenu = document.querySelector(".submenu");
 
-if (dropdownLink && submenu) {
+if (dropdownToggle && submenu) {
 
-    dropdownLink.addEventListener("click", (e) => {
+    dropdownToggle.addEventListener("click", (e) => {
 
-        if (window.innerWidth <= 768) {
+        e.stopPropagation();
 
-            e.preventDefault();
-            e.stopPropagation();
-
-            submenu.classList.toggle("open");
-
-        }
+        submenu.classList.toggle("open");
+        dropdown.classList.toggle("open");
 
     });
 
@@ -166,7 +163,7 @@ document.querySelectorAll(".submenu a, nav > ul > li > a:not(.dropdown > a)")
 // SCROLL SUAVE PARA ANCLAS
 // ==============================
 
-document.querySelectorAll('a[href^="#"]').forEach((ancla) => {
+document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((ancla) => {
 
     ancla.addEventListener("click", function (e) {
 

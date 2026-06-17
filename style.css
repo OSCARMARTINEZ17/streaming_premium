@@ -77,6 +77,24 @@ nav ul li a:hover{
     position: relative;
 }
 
+.dropdown-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    cursor:pointer;
+    color:#fff;
+}
+
+.dropdown-toggle{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dropdown.open .dropdown-toggle{
+    transform:rotate(180deg);
+}
+
 .submenu {
     position: absolute;
     top: 100%;

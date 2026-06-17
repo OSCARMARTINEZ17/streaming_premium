@@ -69,6 +69,8 @@ const navMenu = document.getElementById("nav-menu");
 function cerrarMenu() {
     if (navMenu) navMenu.classList.remove("active");
     if (menuToggle) menuToggle.classList.remove("active");
+    // Cierra también el submenu si estaba abierto
+    cerrarSubmenu();
 }
 
 function abrirCerrarMenu() {
@@ -83,12 +85,48 @@ if (menuToggle && navMenu) {
         abrirCerrarMenu();
     });
 
-    // Cierra el menú al tocar fuera de él (botón o nav)
     document.addEventListener("click", (e) => {
 
         const clicDentroDelMenu = navMenu.contains(e.target) || menuToggle.contains(e.target);
 
         if (!clicDentroDelMenu) cerrarMenu();
+
+    });
+
+}
+
+// ==============================
+// DROPDOWN CATEGORÍAS (MÓVIL)
+// ==============================
+
+const dropdownLink = document.querySelector(".dropdown > a");
+const dropdownItem = document.querySelector(".dropdown");
+const submenu = document.querySelector(".submenu");
+
+function cerrarSubmenu() {
+    if (submenu) submenu.classList.remove("open");
+    if (dropdownItem) dropdownItem.classList.remove("open");
+}
+
+if (dropdownLink) {
+
+    dropdownLink.addEventListener("click", (e) => {
+
+        if (window.innerWidth <= 768) {
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            const estaAbierto = submenu.classList.contains("open");
+
+            if (estaAbierto) {
+                cerrarSubmenu();
+            } else {
+                submenu.classList.add("open");
+                dropdownItem.classList.add("open");
+            }
+
+        }
 
     });
 
@@ -104,14 +142,14 @@ const paginaActual = window.location.pathname.split("/").pop();
 enlaces.forEach((enlace) => {
 
     if (enlace.getAttribute("href") === paginaActual) {
-
         enlace.style.color = "#00ff88";
         enlace.style.fontWeight = "bold";
-
     }
 
-    // Si el usuario toca un enlace dentro del menú móvil, lo cerramos
-    enlace.addEventListener("click", cerrarMenu);
+    // Al tocar un enlace real (no el de Categorías), cerramos el menú
+    if (!enlace.closest(".dropdown") || enlace.closest(".submenu")) {
+        enlace.addEventListener("click", cerrarMenu);
+    }
 
 });
 
@@ -129,9 +167,7 @@ document.querySelectorAll('a[href^="#"]').forEach(ancla => {
 
         if (destino) {
 
-            destino.scrollIntoView({
-                behavior: "smooth"
-            });
+            destino.scrollIntoView({ behavior: "smooth" });
 
         }
 

@@ -77,40 +77,31 @@ nav ul li a:hover{
     position:relative;
 }
 
+/* REEMPLAZA el bloque del submenu dentro de @media (max-width: 768px) */
+
 .submenu{
-    position:absolute;
-    top:100%;
-    left:0;
-    background:#1a1f2b;
-    min-width:260px;
-    display:none;
+    position:static;
+    display:none;          /* oculto por defecto */
     flex-direction:column;
-    padding:10px 0;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
-    z-index:1000;
-}
-
-.submenu li{
-    list-style:none;
+    background:transparent;
+    box-shadow:none;
     width:100%;
+    min-width:100%;
+    border-radius:0;
+    padding-top:0;
 }
 
-.submenu a{
-    display:block;
-    padding:12px 20px;
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+.submenu.open{
+    display:flex;          /* se abre solo cuando JS agrega .open */
 }
 
-.submenu a:hover{
-    background:#00ff88;
-    color:#000;
+/* Flecha giratoria al abrir */
+.dropdown > a .fa-chevron-down{
+    transition: transform 0.3s;
 }
 
-.dropdown:hover .submenu{
-    display:flex;
+.dropdown.open > a .fa-chevron-down{
+    transform: rotate(180deg);
 }
 
 /* BOTÓN WHATSAPP HEADER */

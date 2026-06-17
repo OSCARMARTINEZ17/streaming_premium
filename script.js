@@ -67,48 +67,48 @@ const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
 function cerrarMenu() {
-    if (navMenu) navMenu.classList.remove("active");
-    if (menuToggle) menuToggle.classList.remove("active");
-    // Cierra también el submenu si estaba abierto
-    cerrarSubmenu();
-}
 
-function abrirCerrarMenu() {
-    if (navMenu) navMenu.classList.toggle("active");
-    if (menuToggle) menuToggle.classList.toggle("active");
+    if (navMenu) {
+        navMenu.classList.remove("active");
+    }
+
+    if (submenu) {
+        submenu.classList.remove("open");
+    }
+
 }
 
 if (menuToggle && navMenu) {
 
     menuToggle.addEventListener("click", (e) => {
+
         e.stopPropagation();
-        abrirCerrarMenu();
+
+        navMenu.classList.toggle("active");
+
     });
 
     document.addEventListener("click", (e) => {
 
-        const clicDentroDelMenu = navMenu.contains(e.target) || menuToggle.contains(e.target);
-
-        if (!clicDentroDelMenu) cerrarMenu();
+        if (
+            !navMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+            cerrarMenu();
+        }
 
     });
 
 }
 
 // ==============================
-// DROPDOWN CATEGORÍAS (MÓVIL)
+// SUBMENÚ CATEGORÍAS MÓVIL
 // ==============================
 
 const dropdownLink = document.querySelector(".dropdown > a");
-const dropdownItem = document.querySelector(".dropdown");
 const submenu = document.querySelector(".submenu");
 
-function cerrarSubmenu() {
-    if (submenu) submenu.classList.remove("open");
-    if (dropdownItem) dropdownItem.classList.remove("open");
-}
-
-if (dropdownLink) {
+if (dropdownLink && submenu) {
 
     dropdownLink.addEventListener("click", (e) => {
 
@@ -117,14 +117,7 @@ if (dropdownLink) {
             e.preventDefault();
             e.stopPropagation();
 
-            const estaAbierto = submenu.classList.contains("open");
-
-            if (estaAbierto) {
-                cerrarSubmenu();
-            } else {
-                submenu.classList.add("open");
-                dropdownItem.classList.add("open");
-            }
+            submenu.classList.toggle("open");
 
         }
 
@@ -133,7 +126,7 @@ if (dropdownLink) {
 }
 
 // ==============================
-// MENÚ ACTIVO AUTOMÁTICO + CIERRE AL NAVEGAR
+// MENÚ ACTIVO AUTOMÁTICO
 // ==============================
 
 const enlaces = document.querySelectorAll("nav a");
@@ -142,14 +135,30 @@ const paginaActual = window.location.pathname.split("/").pop();
 enlaces.forEach((enlace) => {
 
     if (enlace.getAttribute("href") === paginaActual) {
+
         enlace.style.color = "#00ff88";
         enlace.style.fontWeight = "bold";
+
     }
 
-    // Al tocar un enlace real (no el de Categorías), cerramos el menú
-    if (!enlace.closest(".dropdown") || enlace.closest(".submenu")) {
-        enlace.addEventListener("click", cerrarMenu);
-    }
+});
+
+// ==============================
+// CERRAR MENÚ AL NAVEGAR
+// ==============================
+
+document.querySelectorAll(".submenu a, nav > ul > li > a:not(.dropdown > a)")
+.forEach((enlace) => {
+
+    enlace.addEventListener("click", () => {
+
+        if (window.innerWidth <= 768) {
+
+            cerrarMenu();
+
+        }
+
+    });
 
 });
 
@@ -157,20 +166,24 @@ enlaces.forEach((enlace) => {
 // SCROLL SUAVE PARA ANCLAS
 // ==============================
 
-document.querySelectorAll('a[href^="#"]').forEach(ancla => {
+document.querySelectorAll('a[href^="#"]').forEach((ancla) => {
 
     ancla.addEventListener("click", function (e) {
-
-        e.preventDefault();
 
         const destino = document.querySelector(this.getAttribute("href"));
 
         if (destino) {
 
-            destino.scrollIntoView({ behavior: "smooth" });
+            e.preventDefault();
+
+            destino.scrollIntoView({
+                behavior: "smooth"
+            });
 
         }
 
     });
 
 });
+
+console.log("SCRIPT OK");

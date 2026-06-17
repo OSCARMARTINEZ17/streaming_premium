@@ -70,37 +70,60 @@ nav ul li a:hover{
 }
 
 /* =========================
-   MENÚ DESPLEGABLE
+   MENÚ DESPLEGABLE (escritorio)
 ========================= */
 
-.dropdown{
-    position:relative;
+.dropdown {
+    position: relative;
 }
 
-/* REEMPLAZA el bloque del submenu dentro de @media (max-width: 768px) */
-
-.submenu{
-    position:static;
-    display:none;          /* oculto por defecto */
-    flex-direction:column;
-    background:transparent;
-    box-shadow:none;
-    width:100%;
-    min-width:100%;
-    border-radius:0;
-    padding-top:0;
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1f2b;
+    min-width: 260px;
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
+    z-index: 1000;
 }
 
-.submenu.open{
-    display:flex;          /* se abre solo cuando JS agrega .open */
+.submenu li {
+    list-style: none;
+    width: 100%;
 }
 
-/* Flecha giratoria al abrir */
-.dropdown > a .fa-chevron-down{
+.submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.submenu a:hover {
+    background: #00ff88;
+    color: #000;
+}
+
+/* SOLO escritorio */
+@media (min-width: 769px){
+
+    .dropdown:hover .submenu{
+        display:flex;
+    }
+
+}
+
+/* Flecha giratoria */
+.dropdown > a .fa-chevron-down {
     transition: transform 0.3s;
 }
 
-.dropdown.open > a .fa-chevron-down{
+.dropdown.open > a .fa-chevron-down {
     transform: rotate(180deg);
 }
 
@@ -612,40 +635,46 @@ footer p{
     header{
         flex-direction:row;
         justify-content:space-between;
+        align-items:center;
         padding:15px 5%;
     }
 
     .logo{
         font-size:1.3rem;
-        text-align:center;
     }
 
     .menu-toggle{
         display:block;
+        font-size:1.8rem;
+        cursor:pointer;
+        z-index:1002;
     }
 
     .header-whatsapp{
         display:none;
     }
 
+    /* MENÚ PRINCIPAL */
+
     nav{
+        display:none;
         position:absolute;
         top:100%;
         left:0;
         width:100%;
         background:#111827;
-        max-height:0;
-        overflow:hidden;
-        transition:.4s;
+        box-shadow:0 10px 20px rgba(0,0,0,.3);
+        z-index:1001;
     }
 
     nav.active{
-        max-height:700px;
+        display:block;
     }
 
     nav ul{
+        display:flex;
         flex-direction:column;
-        align-items:center;
+        width:100%;
         gap:0;
     }
 
@@ -655,25 +684,33 @@ footer p{
 
     nav ul li a{
         display:block;
+        width:100%;
         padding:15px 20px;
         border-top:1px solid rgba(255,255,255,.08);
     }
 
-    /* Submenú siempre visible en lista: no depende de :hover,
-       que no funciona bien en pantallas táctiles */
+    /* SUBMENÚ */
+
     .submenu{
+        display:none;
         position:static;
-        display:flex;
-        background:transparent;
-        box-shadow:none;
+        background:#1a1f2b;
         width:100%;
         min-width:100%;
+        box-shadow:none;
         border-radius:0;
-        padding-top:10px;
+        padding:0;
+    }
+
+    .submenu.open{
+        display:flex;
+        flex-direction:column;
     }
 
     .submenu a{
-        padding:8px 0;
+        padding:12px 35px;
+        font-size:.95rem;
+        border-top:1px solid rgba(255,255,255,.05);
     }
 
     .hero{
@@ -681,19 +718,12 @@ footer p{
         padding:220px 20px 80px;
     }
 
-    .hero-badge{
-        font-size:.8rem;
-        padding:6px 15px;
-    }
-
     .hero h1{
         font-size:2.3rem;
-        line-height:1.2;
     }
 
     .hero p{
         font-size:1rem;
-        line-height:1.6;
     }
 
     .hero-buttons{
@@ -719,29 +749,17 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    .card{
-        padding:20px;
-    }
-
-    .stats{
-        flex-direction:column;
-        align-items:center;
+    .beneficios-grid{
+        grid-template-columns:1fr;
     }
 
     .reviews{
         grid-template-columns:1fr;
     }
 
-    .beneficios-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero-secundario{
-        padding-top:180px;
-    }
-
-    .hero-secundario h1{
-        font-size:2rem;
+    .stats{
+        flex-direction:column;
+        align-items:center;
     }
 }
 

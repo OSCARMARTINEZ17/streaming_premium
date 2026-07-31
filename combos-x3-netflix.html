@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Combos de 3 plataformas con Netflix incluido: Disney+, HBO Max, Paramount+, Amazon Prime Video, Crunchyroll y más."
+    />
     <title>Combos x3 con Netflix | Streaming Premium</title>
 
     <link rel="stylesheet" href="style.css" />
@@ -19,32 +23,40 @@
 
     <header>
       <div class="logo">
-        <a href="index.html">STREAMING PREMIUM</a>
+        <a href="index.html"> STREAMING PREMIUM </a>
       </div>
 
-      <nav>
+      <!-- BOTÓN MENÚ MÓVIL -->
+
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </div>
+
+      <!-- MENÚ -->
+
+      <nav id="nav-menu">
         <ul>
           <li>
             <a href="index.html"> Inicio </a>
           </li>
 
           <li class="dropdown">
-            <a href="#">
-              Categorías
-              <i class="fa-solid fa-chevron-down"></i>
-            </a>
+            <div class="dropdown-header">
+              <span>Categorías</span>
+
+              <i
+                class="fa-solid fa-chevron-down dropdown-toggle"
+                aria-hidden="true"
+              ></i>
+            </div>
 
             <ul class="submenu">
               <li>
-                <a href="pantalla-individual.html">
-                  Pantalla Individual
-                </a>
+                <a href="pantalla-individual.html"> Pantalla Individual </a>
               </li>
 
               <li>
-                <a href="cuenta-completa.html">
-                  Cuenta Completa
-                </a>
+                <a href="cuenta-completa.html"> Cuenta Completa </a>
               </li>
 
               <li>
@@ -52,27 +64,19 @@
               </li>
 
               <li>
-                <a href="combos-x3-netflix.html">
-                  Combos x3 con Netflix
-                </a>
+                <a href="combos-x3-netflix.html"> Combos x3 con Netflix </a>
               </li>
 
               <li>
-                <a href="combos-x3.html">
-                  Combos x3 sin Netflix
-                </a>
+                <a href="combos-x3.html"> Combos x3 sin Netflix </a>
               </li>
 
               <li>
-                <a href="combos-x4-netflix.html">
-                  Combos x4 con Netflix
-                </a>
+                <a href="combos-x4-netflix.html"> Combos x4 con Netflix </a>
               </li>
 
               <li>
-                <a href="combos-x4.html">
-                  Combos x4 sin Netflix
-                </a>
+                <a href="combos-x4.html"> Combos x4 sin Netflix </a>
               </li>
 
               <li>
@@ -92,7 +96,7 @@
         class="header-whatsapp"
         target="_blank"
       >
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
         Comprar
       </a>
     </header>
@@ -128,17 +132,17 @@
 
         <div class="hero-info">
           <div>
-            <i class="fa-solid fa-bolt"></i>
+            <i aria-hidden="true" class="fa-solid fa-bolt"></i>
             Entrega rápida
           </div>
 
           <div>
-            <i class="fa-solid fa-shield-halved"></i>
+            <i aria-hidden="true" class="fa-solid fa-shield-halved"></i>
             Garantía
           </div>
 
           <div>
-            <i class="fa-solid fa-headset"></i>
+            <i aria-hidden="true" class="fa-solid fa-headset"></i>
             Soporte 24/7
           </div>
         </div>
@@ -156,7 +160,7 @@
           <p>Netflix + Disney Premium + HBO Max</p>
           <span>$35.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -166,7 +170,7 @@
           <p>Netflix + Disney Premium + Paramount+</p>
           <span>$36.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -176,7 +180,7 @@
           <p>Netflix + Disney Premium + Amazon Prime Video</p>
           <span>$36.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -186,7 +190,7 @@
           <p>Netflix + Disney Premium + Crunchyroll</p>
           <span>$34.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -196,7 +200,7 @@
           <p>Netflix + Disney Premium + Apple TV+</p>
           <span>$35.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -206,7 +210,7 @@
           <p>Netflix + Disney Premium + Vix Premium</p>
           <span>$34.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -224,7 +228,7 @@
           <p>Netflix + Disney Estándar + HBO Max</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -234,7 +238,7 @@
           <p>Netflix + Disney Estándar + Paramount+</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -244,7 +248,7 @@
           <p>Netflix + Disney Estándar + Amazon Prime Video</p>
           <span>$31.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -254,7 +258,7 @@
           <p>Netflix + Disney Estándar + Crunchyroll</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -264,7 +268,7 @@
           <p>Netflix + Disney Estándar + Apple TV+</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -274,7 +278,7 @@
           <p>Netflix + Disney Estándar + Vix Premium</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -292,7 +296,7 @@
           <p>Netflix + HBO Max + Paramount+</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -302,7 +306,7 @@
           <p>Netflix + HBO Max + Amazon Prime Video</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -312,7 +316,7 @@
           <p>Netflix + HBO Max + Crunchyroll</p>
           <span>$28.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -322,7 +326,7 @@
           <p>Netflix + HBO Max + Apple TV+</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -332,7 +336,7 @@
           <p>Netflix + HBO Max + Vix Premium</p>
           <span>$28.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -350,7 +354,7 @@
           <p>Netflix + Paramount+ + Amazon Prime Video</p>
           <span>$31.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -360,7 +364,7 @@
           <p>Netflix + Paramount+ + Crunchyroll</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -370,7 +374,7 @@
           <p>Netflix + Paramount+ + Apple TV+</p>
           <span>$31.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -380,7 +384,7 @@
           <p>Netflix + Paramount+ + Vix Premium</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -390,7 +394,7 @@
           <p>Netflix + Amazon Prime Video + Crunchyroll</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -400,7 +404,7 @@
           <p>Netflix + Amazon Prime Video + Apple TV+</p>
           <span>$31.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -410,7 +414,7 @@
           <p>Netflix + Amazon Prime Video + Vix Premium</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -420,7 +424,7 @@
           <p>Netflix + Crunchyroll + Apple TV+</p>
           <span>$30.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -430,7 +434,7 @@
           <p>Netflix + Crunchyroll + Vix Premium</p>
           <span>$29.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -440,7 +444,7 @@
           <p>Netflix + Apple TV+ + Vix Premium</p>
           <span>$28.000</span>
           <button class="btn-comprar">
-            <i class="fab fa-whatsapp"></i>
+            <i aria-hidden="true" class="fab fa-whatsapp"></i>
             Comprar Ahora
           </button>
         </div>
@@ -456,7 +460,7 @@
     <!-- WHATSAPP -->
 
     <a href="https://wa.me/573224717356" class="whatsapp" target="_blank">
-      <i class="fab fa-whatsapp"></i>
+      <i aria-hidden="true" class="fab fa-whatsapp"></i>
     </a>
 
     <script src="script.js"></script>
